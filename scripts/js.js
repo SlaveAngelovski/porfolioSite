@@ -33,21 +33,6 @@ function removeClass(fromClass, removeClass) {
     });
 }
 
-//PRELOAD IMAGES
-document.addEventListener("DOMContentLoaded", function(event) {
-  var images = new Array();
-  function preload() {
-    for (i = 0; i < preload.arguments.length; i++) {
-      images[i] = new Image();
-      images[i].src = preload.arguments[i];
-    }
-  }
-  preload (
-    "images/web1.jpg",
-    "images/web2.jpg",
-    "images/web3.jpg"
-  );
-});
 // smooth scroll from menu to page
 //visit home page
   $("li:nth-of-type(1) a").click(function visitHome (){    

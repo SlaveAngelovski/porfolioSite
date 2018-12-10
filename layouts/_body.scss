@@ -8,6 +8,7 @@ body {
 	font-family: $font-sans;
 	height: 100%;
 	display: block !important;
+	scroll-behavior: smooth;
 	.show {
 		opacity: 1 !important;
 	}

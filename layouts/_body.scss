@@ -1,0 +1,15 @@
+html {
+	height: 100%;
+}
+head {
+	display: none;
+}
+body {
+	font-family: $font-sans;
+	height: 100%;
+	display: block !important;
+	.show {
+		opacity: 1 !important;
+	}
+}
+

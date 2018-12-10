@@ -1,0 +1,569 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ba",
+				"background-repeat"
+			],
+			[
+				"max",
+				"max-height"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"h",
+				"h1\tTag"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"max-",
+				"max-height"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"Font",
+				"font-size"
+			],
+			[
+				"flex",
+				"flex-basis"
+			],
+			[
+				"fle",
+				"flex-start"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"lo",
+				"loop\tAttr"
+			],
+			[
+				"te",
+				"text-transform"
+			],
+			[
+				"bor",
+				"border-right"
+			],
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"border-c",
+				"border-color"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"bakgorund-c",
+				"background-color"
+			],
+			[
+				"cu",
+				"cursor"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"n",
+				"nowrap"
+			],
+			[
+				"b",
+				"block"
+			],
+			[
+				"mx-",
+				"max-width"
+			],
+			[
+				"hea",
+				"header\tTag"
+			],
+			[
+				"c",
+				"class\tAttr"
+			],
+			[
+				"le",
+				"letter-spacing"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"a",
+				"auto"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"i",
+				"i\tTag"
+			],
+			[
+				"f",
+				"font-weight"
+			],
+			[
+				"ds",
+				"display"
+			],
+			[
+				"li",
+				"line-height"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"mari",
+				"margin-left"
+			],
+			[
+				"min-",
+				"min-width"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"box",
+				"box-sizing"
+			],
+			[
+				"al",
+				"alt\tAttr"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"w",
+				"width"
+			],
+			[
+				"d",
+				"display"
+			],
+			[
+				"inli",
+				"inline-block"
+			],
+			[
+				"col",
+				"color"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"background-c",
+				"background-color"
+			],
+			[
+				"inline",
+				"inline-block"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 183.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"compa",
+				"Build With: Compass"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"THEME",
+				"UI: Select Theme"
+			],
+			[
+				"color",
+				"UI: Select Color Scheme"
+			],
+			[
+				"set s",
+				"Set Syntax: SCSS"
+			],
+			[
+				"css",
+				"CSSLint: Run CSSLint"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"sublimelinter:ena",
+				"SublimeLinter: Enable Inline Tooltips"
+			],
+			[
+				"lint",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"instal ",
+				"Package Control: Install Package"
+			],
+			[
+				"co",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 528.0
+	},
+	"console":
+	{
+		"height": 130.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/G/web_development/projects/my_portfolio2/website/exercise2.sublime-workspace",
+		"/G/web_development/projects/my_portfolio2/website/scripts/js.js",
+		"/G/web_development/projects/my_portfolio2/website/index.html",
+		"/G/web_development/projects/my_portfolio2/website/js.js",
+		"/G/web_development/projects/my_portfolio2/website/styles.css",
+		"/G/web_development/projects/my_portfolio2/website/components/_modules.scss",
+		"/G/web_development/projects/my_portfolio2/website/abstracts/_mixins.scss",
+		"/G/web_development/projects/my_portfolio2/website/abstracts/_variables.scss",
+		"/G/web_development/projects/my_portfolio2/website/base/_reset.scss",
+		"/G/web_development/projects/my_portfolio2/website/layouts/_content.scss",
+		"/G/web_development/projects/my_portfolio2/website/layouts/_header.scss",
+		"/G/web_development/projects/my_portfolio2/website/layouts/_body.scss",
+		"/G/web_development/projects/my_portfolio2/website/portfolio.html",
+		"/G/web_development/projects/my_portfolio2/website/webportfolio.html",
+		"/G/web_development/projects/my_portfolio2/website/about.html",
+		"/G/web_development/projects/my_portfolio/website/videos/3d.gif",
+		"/G/web_development/projects/my_portfolio/website/base/_reset.scss",
+		"/G/web_development/projects/my_portfolio/website/layouts/_body.scss",
+		"/G/web_development/projects/my_portfolio/website/layouts/_header.scss",
+		"/G/web_development/projects/my_portfolio/website/styles.css",
+		"/G/web_development/projects/my_portfolio/website/abstracts/_variables.scss",
+		"/G/web_development/projects/my_portfolio/website/styles.scss",
+		"/G/web_development/projects/my_portfolio/website/abstracts/__abstracts-dir.scss",
+		"/G/web_development/projects/my_portfolio/website/base/__base-dir.scss",
+		"/G/web_development/projects/my_portfolio/website/abstracts/_mixins.scss",
+		"/G/web_development/projects/my_portfolio/website/base/_typography.scss",
+		"/G/web_development/projects/my_portfolio/website/layouts/__layouts-dir.scss",
+		"/G/web_development/projects/my_portfolio/website/components/_modules.scss",
+		"/G/web_development/projects/my_portfolio/website/layouts/_content.scss",
+		"/G/web_development/projects/my_portfolio/website/layouts/_anouncement-bar.scss",
+		"/G/web_development/projects/my_portfolio/website/config.rb",
+		"/G/web_development/exercises/exercise2/abstracts/_mixins.scss",
+		"/G/web_development/exercises/exercise2/layouts/_header.scss",
+		"/G/web_development/exercises/exercise2/index.html",
+		"/G/web_development/exercises/exercise2/components/_modules.scss",
+		"/G/web_development/exercises/exercise2/abstracts/_variables.scss",
+		"/G/web_development/exercises/exercise2/layouts/_anouncement-bar.scss",
+		"/G/web_development/exercises/exercise2/layouts/__layouts-dir.scss",
+		"/G/web_development/exercises/exercise2/layouts/_live-video-module.scss",
+		"/G/web_development/exercises/exercise2/base/_reset.scss",
+		"/G/web_development/exercises/exercise2/base/_typography.scss",
+		"/G/web_development/exercises/exercise2/layouts/_header-ad.scss",
+		"/G/web_development/exercises/exercise2/components/__components-dir.scss",
+		"/G/web_development/exercises/exercise2/components/_search-bar.scss",
+		"/G/web_development/exercises/exercise2/styles.css",
+		"/G/web_development/exercises/exercise2/layouts/_header-ad",
+		"/G/web_development/exercises/exercise2/styles.scss",
+		"/G/web_development/exercises/exercise2/abstracts/__abstracts-dir.scss",
+		"/G/web_development/exercises/exercise2/images/fb_logo.svg",
+		"/G/web_development/exercises/exercise2/images/logo.svg",
+		"/G/web_development/exercises/exercise1/main.css",
+		"/G/web_development/exercises/exercise2/abstracts/_fonts.scss",
+		"/G/web_development/exercises/exercise2/base/font-awesome-4.7.0/scss/_path.scss",
+		"/G/web_development/exercises/exercise2/base/font-awesome-4.7.0/scss/_mixins.scss",
+		"/G/web_development/exercises/exercise1/index.htm",
+		"/G/web_development/exercises/exercise2/base/font-awesome-4.7.0/scss/_variables.scss",
+		"/G/web_development/exercises/exercise2/abstracts/_text-styles.scss",
+		"/G/web_development/exercises/exercise2/abstracts/_text-styles",
+		"/G/web_development/exercises/exercise2/images/logo.html",
+		"/G/web_development/exercises/exercise2/config.rb",
+		"/G/web_development/exercises/exercise2/base/__base-dir.scss",
+		"/G/web_development/exercises/exercise2/components/_input.scss",
+		"/G/web_development/exercises/exercise2/layouts/_footer.scss",
+		"/G/web_development/exercises/exercise2/vendor/__vendor-dir.scss",
+		"/G/web_development/exercises/exercise2/exercise2.sublime-project",
+		"/G/web development/exercises/exercise2/styles.scss",
+		"/G/web development/exercises/exercise2/vendor/__vendor-dir.scss",
+		"/G/web development/exercises/exercise2/layouts/_main-navigation.scss",
+		"/G/web development/exercises/exercise2/layouts/_footer.scss",
+		"/G/web development/exercises/exercise2/layouts/__layouts-dir.scss",
+		"/G/web development/exercises/exercise2/components/_button.scss",
+		"/G/web development/exercises/exercise2/components/input.scss",
+		"/G/web development/exercises/exercise2/components/_modal.scss",
+		"/G/web development/exercises/exercise2/components/__components-dir.scss",
+		"/G/web development/exercises/exercise2/abstracts/__abstracts-dir.scss",
+		"/G/web development/exercises/exercise2/base/_reset.scss",
+		"/G/web development/exercises/exercise2/base/_typography.scss",
+		"/G/web development/exercises/exercise2/base/__base-dir.scss",
+		"/G/web development/exercises/exercise2/abstracts/_variables.scss",
+		"/G/web development/exercises/exercise2/abstracts/_mixins.scss",
+		"/G/web development/exercises/exercise2/abstracts/_fonts.scss",
+		"/G/web development/exercises/exercise2/index.html",
+		"/G/web development/exercises/exercise2/styles.css",
+		"/C/Users/Defiler0/AppData/Roaming/Sublime Text 3/Packages/SublimeOnSaveBuild/SublimeOnSaveBuild.sublime-settings",
+		"/C/Users/Defiler0/AppData/Roaming/Sublime Text 3/Packages/User/SublimeOnSaveBuild.sublime-settings",
+		"/C/Users/Defiler0/AppData/Roaming/Sublime Text 3/Packages/SublimeOnSaveBuild/README.md",
+		"/G/web development/exercises/exercise2/layouts/_header.scss",
+		"/G/web development/exercises/exercise2/components/_input.scss",
+		"/G/web development/exercises/exercise1/index.htm",
+		"/G/web development/exercises/exercise2/variables.sass",
+		"/G/web development/exercises/exercise2/app.sass",
+		"/G/web development/exercises/exercise2/article.sass",
+		"/G/web development/exercises/exercise2/app.css",
+		"/G/web development/exercises/exercise2/New Text Document.txt",
+		"/G/web development/exercises/exercise 2/style.scss",
+		"/C/Users/Defiler0/AppData/Roaming/Sublime Text 3/Packages/User/Bild to CSS directory.sublime-build",
+		"/G/web development/exercises/exercise 2/style.css",
+		"/C/Users/Defiler0/AppData/Roaming/Sublime Text 3/Packages/User/untitled.sublime-build",
+		"/G/web development/exercises/exercise1/main.css",
+		"/C/Users/Defiler0/AppData/Roaming/Sublime Text 3/Packages/CSSLint/Default (Windows).sublime-keymap",
+		"/C/Users/Defiler0/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Defiler0/AppData/Roaming/Sublime Text 3/Packages/CSSLint/CSSLint.sublime-settings",
+		"/C/Users/Defiler0/AppData/Roaming/Sublime Text 3/Packages/User/CSSLint.sublime-settings",
+		"/G/web development/exercises/main.css",
+		"/G/web development/exercises/index.htm"
+	],
+	"find":
+	{
+		"height": 30.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"main",
+			"web-",
+			"3d",
+			"intro",
+			"5em",
+			"\t\t\t\t\n",
+			"5em"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 63.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.exec":
+	{
+		"height": 114.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Compass/Compass.sublime-build",
+	"project": "my_portfolio.sublime-project",
+	"replace":
+	{
+		"height": 56.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 273.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

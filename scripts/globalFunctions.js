@@ -1,4 +1,3 @@
-
 // global functions
 
 // SHORTEN SELECTORS
@@ -32,11 +31,12 @@ function getOffsetTop(className) {
     }
 }
 
-function scrollToEl(element) {
+function scrollToEl(element, i, aditionalValue = 0) {
+    console.log(window.screenX);
     window.scrollTo({
       'behavior': 'smooth',
       'left': 0,
-      'top': element.offsetTop
+      'top': queryAll(element)[i].offsetTop - window.screenHeight*0.1 - aditionalValue
     });
   }
   

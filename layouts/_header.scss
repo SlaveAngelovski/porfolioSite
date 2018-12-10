@@ -8,7 +8,7 @@
 	@media screen and (max-width: 700px) {
 		background-color: $white;
 	}
-	.header-container {
+	@at-root .header-container {
 		justify-content: center;
 		align-items: center;
 		height: 4em;
@@ -18,9 +18,13 @@
 		@media screen and (max-width: 370px) {
 			width: 90%;
 		}
-		nav {
+		@at-root nav > * {
+			height: 100%;
+		}
+		@at-root nav {
 			justify-content: center;
 			align-items: center;
+			height: 100%;
 				@media screen and (max-width: 700px) {
 					width: 100%;
 				}
@@ -42,6 +46,7 @@
 						font-weight: 400;
 						color: $text-color;
 						border-bottom: 2px solid $underline-menu;
+						align-items: center;
 						cursor: pointer;
 						&:hover, &:active {
 							border-bottom: 2px solid $text-color;

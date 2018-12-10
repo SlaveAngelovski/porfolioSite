@@ -1,5 +1,3 @@
-
-
   // global variables that update on document ready
 
   screenHeight = $(window).height(); //get viewport height
@@ -7,72 +5,93 @@
   scrlValue = $(window).scrollTop(); //get scroll position
 
 
-// smooth scroll from menu to page
-//visit home page
-  $("li:nth-of-type(1) a").click(function visitHome (){    
-    $('html, body').animate({ // make scroll to page smooth
-        scrollTop: 0
-    }, 1000);
-  });
+function goToElement(event) {
+  scrollToElement(event, ".header-container a");
+}
 
-//visit skills page
-$("li:nth-of-type(2) a").click(function visitSkills (){  
-  if (screenWidth <= 375 ){ // use offset because of resolution
-    $('html, body').animate({ 
-      scrollTop: $(".container2").offset().top -118
-    }, 1000); 
+function scrollToElement(event, elementQuery) {
+  let i = 0;
+  let iLength = queryAll(elementQuery).length;
+  for (i; i < iLength; i++) {
+    if (event.target.textContent === queryAll(elementQuery)[i].textContent) {
+      if (event.target.textContent === "Skills") {
+        scrollToEl(".mainContainers", i, 200);
+      }
+      else {
+        scrollToEl(".mainContainers", i);
+      }
+      return;
+    }
   }
-  if ((screenWidth > 375) && (screenWidth <= 620 )){ // use offset because of resolution
-    $('html, body').animate({ 
-      scrollTop: $(".container2").offset().top -50
-    }, 1000); 
-  }
-  if ((screenWidth > 620) && (screenWidth < 1024)){ // use offset because of resolution
-    $('html, body').animate({ 
-      scrollTop: $(".container2").offset().top -200
-    }, 1000); 
-  }
-  if ((screenWidth >= 1024) && (screenWidth < 1366)){ // use offset because of resolution
-    $('html, body').animate({ 
-      scrollTop: $(".container2").offset().top -200
-    }, 1000); 
-  }
-  if (screenWidth >= 1366 && (screenWidth < 1940)){ // use offset because of resolution
-    $('html, body').animate({
-      scrollTop: $(".container2").offset().top -250
-    }, 1000);
-  }
-  if (screenWidth >= 1940){ // use offset because of resolution
-    $('html, body').animate({ 
-      scrollTop: $(".container2").offset().top -280
-    }, 1000); 
-  }
-});
+}
 
-  //visit portfolio page
- $("li:nth-of-type(3) a").click(function visitPortfolio (){
-  if (screenWidth <= 499 ){ // use offset because of resolution
-    $('html, body').animate({ 
-      scrollTop: $(".container4").offset().top -60
-    }, 1000); 
-  } 
-  if ((screenWidth >= 500) && (screenWidth <= 960)){ // use offset because of resolution
-    $('html, body').animate({
-      scrollTop: $(".container4").offset().top -70
-    }, 1000);
-  }
-  if (screenWidth > 960 ){ // use offset because of resolution
-    $('html, body').animate({
-      scrollTop: $(".container4").offset().top -90
-    }, 1000);
-  }
-});
-//visit contact page
- $("li:nth-of-type(4) a").click(function visitContact (){    
-    $('html, body').animate({
-        scrollTop: $(".container5").offset().top +30
-    }, 1000);
-  });
+
+// // smooth scroll from menu to page
+// //visit home page
+//   $("li:nth-of-type(1) a").click(function visitHome (){    
+//     $('html, body').animate({ // make scroll to page smooth
+//         scrollTop: 0
+//     }, 1000);
+//   });
+
+// //visit skills page
+// $("li:nth-of-type(2) a").click(function visitSkills (){  
+//   if (screenWidth <= 375 ){ // use offset because of resolution
+//     $('html, body').animate({ 
+//       scrollTop: $(".container2").offset().top -118
+//     }, 1000); 
+//   }
+//   if ((screenWidth > 375) && (screenWidth <= 620 )){ // use offset because of resolution
+//     $('html, body').animate({ 
+//       scrollTop: $(".container2").offset().top -50
+//     }, 1000); 
+//   }
+//   if ((screenWidth > 620) && (screenWidth < 1024)){ // use offset because of resolution
+//     $('html, body').animate({ 
+//       scrollTop: $(".container2").offset().top -200
+//     }, 1000); 
+//   }
+//   if ((screenWidth >= 1024) && (screenWidth < 1366)){ // use offset because of resolution
+//     $('html, body').animate({ 
+//       scrollTop: $(".container2").offset().top -200
+//     }, 1000); 
+//   }
+//   if (screenWidth >= 1366 && (screenWidth < 1940)){ // use offset because of resolution
+//     $('html, body').animate({
+//       scrollTop: $(".container2").offset().top -250
+//     }, 1000);
+//   }
+//   if (screenWidth >= 1940){ // use offset because of resolution
+//     $('html, body').animate({ 
+//       scrollTop: $(".container2").offset().top -280
+//     }, 1000); 
+//   }
+// });
+
+//   //visit portfolio page
+//  $("li:nth-of-type(3) a").click(function visitPortfolio (){
+//   if (screenWidth <= 499 ){ // use offset because of resolution
+//     $('html, body').animate({ 
+//       scrollTop: $(".container4").offset().top -60
+//     }, 1000); 
+//   } 
+//   if ((screenWidth >= 500) && (screenWidth <= 960)){ // use offset because of resolution
+//     $('html, body').animate({
+//       scrollTop: $(".container4").offset().top -70
+//     }, 1000);
+//   }
+//   if (screenWidth > 960 ){ // use offset because of resolution
+//     $('html, body').animate({
+//       scrollTop: $(".container4").offset().top -90
+//     }, 1000);
+//   }
+// });
+// //visit contact page
+//  $("li:nth-of-type(4) a").click(function visitContact (){    
+//     $('html, body').animate({
+//         scrollTop: $(".container5").offset().top +30
+//     }, 1000);
+//   });
 
 // the select active menu effect before scroll
 $(document).ready(function (event){
@@ -231,3 +250,6 @@ $(document).ready(function() {
   var myLightbox = GLightbox({
   'selector': 'glightbox'});
 });
+
+// add event listeners
+window.addEventListener("click", goToElement);

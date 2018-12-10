@@ -1,7 +1,15 @@
 // page content for intro page
 main {
 	display: block;
- 	margin: 64px 64px 0 64px;
+	margin: 64px 64px 0 64px;
+	 
+	 &:before {
+		content: url("../images/web1.jpg"), url("../images/web2.jpg"), url("../images/web3.jpg");
+		width:0;
+		height:0;
+		visibility:hidden;
+		position: absolute;
+	 }
  	@media (min-aspect-ratio: 43/18) {
  		width: 100vw;
  	}

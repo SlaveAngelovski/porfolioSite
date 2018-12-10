@@ -31,3 +31,12 @@ function getOffsetTop(className) {
         return id(className).getBoundingClientRect().top + document.documentElement.scrollTop;
     }
 }
+
+function scrollToEl(element) {
+    window.scrollTo({
+      'behavior': 'smooth',
+      'left': 0,
+      'top': element.offsetTop
+    });
+  }
+  

@@ -7,6 +7,32 @@
   scrlValue = $(window).scrollTop(); //get scroll position
 
 
+// global variables that update on scroll
+
+// SHORTEN SELECTORS
+function query(className) {
+ return document.querySelector(className);
+}
+function queryAll(className) {
+ return document.querySelectorAll(className);
+}
+function id(idName) {
+ return document.getElementById(idName);
+}
+function tag(tagName) {
+ return document.getElementsByTagName(tagName);
+}
+function addClass(fromClass, addClass) {
+ return queryAll(fromClass).forEach(function(element) {
+    element.classList.add(addClass);
+    });
+}
+function removeClass(fromClass, removeClass) {
+ return queryAll(fromClass).forEach(function(element) {
+    element.classList.remove(removeClass);
+    });
+}
+
 // smooth scroll from menu to page
 //visit home page
   $("li:nth-of-type(1) a").click(function visitHome (){    

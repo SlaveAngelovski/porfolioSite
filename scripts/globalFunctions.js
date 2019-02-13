@@ -32,7 +32,6 @@ function getOffsetTop(className) {
 }
 
 function scrollToEl(element, i, aditionalValue = 0) {
-    console.log(window.screenX);
     window.scrollTo({
       'behavior': 'smooth',
       'left': 0,

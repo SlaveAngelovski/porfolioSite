@@ -1,19 +1,17 @@
   // global variables that update on document ready
-
   screenHeight = $(window).height(); //get viewport height
   screenWidth = $(window).width(); //get viewport width
   scrlValue = $(window).scrollTop(); //get scroll position
-
 
 function goToElement(event) {
   scrollToElement(event, ".header-container a");
 }
 
-function scrollToElement(event, elementQuery) {
+function scrollToElement(event, selectedQueryElement) {
   let i = 0;
-  let iLength = queryAll(elementQuery).length;
+  let iLength = queryAll(selectedQueryElement).length;
   for (i; i < iLength; i++) {
-    if (event.target.textContent === queryAll(elementQuery)[i].textContent) {
+    if (event.target.textContent === queryAll(selectedQueryElement)[i].textContent) {
       if (event.target.textContent === "Skills") {
         scrollToEl(".mainContainers", i, 200);
       }

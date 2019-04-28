@@ -183,18 +183,18 @@ function allFx(event){
 window.addEventListener("scroll", allFx);
 
 // SLIDE SHOW
-  var imgIndex = 0;
-  var imgArray = [
+  let imgIndex = 0;
+  const imgArray = [
     "images/web1.jpg",
     "images/web3.jpg",
     "images/web2.jpg"
   ];
-  var webArray = [
+  const webArray = [
     "http://www.slave-angelovski.com/",
     "http://www.slave-angelovski.com/furniture_site/",
     "http://www.slave-angelovski.com/space_elevator/"
   ];
-  var isActive = false;
+  let isActive = false;
   function removeAnim(){
     query(".websites-img").classList.remove("img-left", "img-right");
     isActive = false;
@@ -245,7 +245,7 @@ query(".nav-left").addEventListener("click", function() {
 
 // initialize glightbox gallery
 $(document).ready(function() {  
-  var myLightbox = GLightbox({
+  let myLightbox = GLightbox({
   'selector': 'glightbox'});
 });
 

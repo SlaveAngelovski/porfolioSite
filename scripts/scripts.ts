@@ -13,10 +13,10 @@ window.addEventListener("load", () => {
       console.log(entry.target, entry);
 
       if (!entry.isIntersecting) {
-        toggleClasses(introEl, 'intro-show-description', 'add');
+        toggleClasses(introEl, 'introShowDescription', 'add');
         toggleClasses(description, 'hidden', 'remove');
       } else {
-        toggleClasses(introEl, 'intro-show-description', 'remove');
+        toggleClasses(introEl, 'introShowDescription', 'remove');
         toggleClasses(description, 'hidden', 'add');
       }
     },

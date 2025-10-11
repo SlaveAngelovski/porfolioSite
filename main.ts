@@ -2,6 +2,7 @@
 import './scripts/scripts.ts';
 import './styles.scss'; 
 import { initializeSkillTree } from './skill-tree';
+import { initializePortfolio } from './portfolio-slide';
 
-// Initialize the skill tree visualization
+initializePortfolio();
 initializeSkillTree();

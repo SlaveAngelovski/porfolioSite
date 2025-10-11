@@ -34,6 +34,11 @@ body {
   background: #555;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 h1,
 h2,
 h3,
@@ -335,7 +340,7 @@ a {
   }
 
   .nodeLabel {
-    font-size: 0.8rem;
+    font-size: 0.8em;
     text-align: center;
     color: $white-color;
     font-weight: 500;
@@ -359,12 +364,11 @@ a {
 
     &.active {
       display: block;
-      opacity: 1;
       animation: fadeIn 0.5s ease forwards;
     }
 
     h1 {
-      font-size: 1.2rem;
+      font-size: 1.2em;
       color: $white-color;
       position: relative;
       padding: $small-distance 0;
@@ -398,48 +402,31 @@ a {
   padding: $x-large-distance $large-distance;
   margin: -1.5vh 4vw 0 4vw;
   background: rgba($white-color, 0.8);
-  font-size: 0.9rem;
+  font-size: 0.9em;
 }
 
 .portfolio {
   margin: 15vh $x-large-distance $large-distance $x-large-distance;
-
-  .imageContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-column: span 8 / span 8;
-    background-color: $white-color;
-    //padding: $x-large-distance;
-  }
-
-  & svg {
-    width: 5em;
-    height: 5em;
-    cursor: pointer;
-  }
 }
 
 .portfolioItem {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  padding: 0 $x-large-distance;
 
   .description {
-    grid-column: span 2 / span 2;
+    grid-column: span 3 / span 3;
     display: flex;
     flex-direction: column;
     align-items: center;
-    //padding: 0 $large-distance;
 
     & h2 {
       font-size: 1.5em;
       color: $grey-color;
-      margin-bottom: $medium-distance;
+      user-select: none;
     }
 
-    & p {
-      margin-bottom: $large-distance;
+    & h2, p, a {
+      padding: $large-distance;
     }
 
     & button {
@@ -448,6 +435,105 @@ a {
       padding: $small-distance $medium-distance;
       border: none;
       cursor: pointer;
+    }
+  }
+
+  .imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: span 7 / span 7;
+    background-color: $white-color;
+    padding: $x-large-distance;    
+  }
+
+  & .arrowLeft, .arrowRight {
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+
+    &.hidden {
+      pointer-events: none;
+    }
+  }
+
+  & img {
+      opacity: 0;
+      display: none;
+      user-select: none;
+
+      &.active {
+        display: block;
+        animation: fadeIn 0.3s ease forwards;
+      }
+    }
+
+  & svg {
+    width: 5em;
+    height: 5em;
+    stroke: $light-grey-color;
+    transition: stroke 0.3s ease;
+
+    &:hover {
+      stroke: $grey-color;
+    }
+  }
+
+  & [data-portfolio-item] {
+    display: none;
+
+    &.active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 1;
+      animation: fadeIn 0.3s ease forwards;
+    }
+  }
+
+  .descriptionFooter {
+    @extend .widthFill;
+    margin-top: $large-distance;
+    font-size: clamp(0.8em, 2vw, 3em);
+    text-align: center;
+    color: $light-grey-color;
+
+    & h1:first-child {
+      line-height: 0.86;
+    }
+
+    & h1:last-child{
+      background-color: $white-color;
+      padding: $small-distance 0;
+    }
+  }
+}
+
+.gallery-container {
+  // stacked layout for gallery masonary
+  // iregular sizes fill gaps, so no gaps needed
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));
+  grid-auto-flow: dense;
+  gap: 0;
+  // display: flex;
+  // flex-wrap: wrap;
+
+  & > div {
+    display: flex;
+    // max-width: 25vw;
+    // use css for loop for random sizes for the width
+    @for $i from 1 through 14 {
+      &:nth-child(1n + #{$i}) {
+        //grid-column: span $i;
+        // flex: 0 0 calc(20% * $i);
+        // width: calc(20% * $i);
+      }
+    }
+
+    & img {
+      //max-width: unset;
+      //height: fit-content;
+      object-fit: cover;   
     }
   }
 }

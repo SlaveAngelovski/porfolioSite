@@ -22,20 +22,20 @@ export function initializePortfolio(): void {
       arrowRight: parent.querySelector('[data-arrow-right]'),
     };
 
-    if (hasNullProperty(elements) === true) return;
+    if (hasValidElements(elements) === false) return;
 
     const totalItems = elements.images.length;
 
     setupKeyboardNavigation(elements.arrowLeft, elements.arrowRight);
 
-    elements.arrowLeft?.addEventListener('click', () => {
+    elements.arrowLeft.addEventListener('click', () => {
       currentIndex == 0 ? currentIndex = 0 : currentIndex--;
-      
+
       updateDisplay(currentIndex, elements);
       updateArrowVisibility(currentIndex, totalItems, elements.arrowLeft, elements.arrowRight);
     });
 
-    elements.arrowRight?.addEventListener('click', () => {
+    elements.arrowRight.addEventListener('click', () => {
       currentIndex >= totalItems - 1 ? currentIndex = totalItems - 1 : currentIndex++;
 
       updateDisplay(currentIndex, elements);
@@ -46,19 +46,21 @@ export function initializePortfolio(): void {
   });
 }
 
-function hasNullProperty(element: PortfolioElements): boolean {
-  return Object.values(element).some((value) => {
-    if (value === null) return true;
-    if (value instanceof NodeList && value.length === 0) return true;
-    return false;
-  });
+function hasValidElements(elements: PortfolioElements): elements is PortfolioElements & {
+  arrowLeft: HTMLElement;
+  arrowRight: HTMLElement;
+} {
+  return !!elements.images.length && 
+         !!elements.description.length && 
+         elements.arrowLeft !== null && 
+         elements.arrowRight !== null;
 }
 
 function updateDisplay(index: number, elements: PortfolioElements): void {
   elements.images.forEach((img, i) => {
     img.classList.toggle('active', i === index);
   });
-  
+
   elements.description.forEach((desc, i) => {
     desc.classList.toggle('active', i === index);
   });

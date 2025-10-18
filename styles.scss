@@ -1,9 +1,10 @@
 @use 'sass:math';
+@use 'sass:color';
 
 * {
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -66,6 +67,36 @@ $white-color-transparent: rgba(246, 246, 246, 0.8);
 $grey-color: rgb(97, 97, 97);
 $light-grey-color: rgb(118, 118, 118);
 $red-color: rgb(162, 52, 52);
+
+button {
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  padding: $small-distance $medium-distance;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  
+  &:focus {
+    outline: none;
+  }
+
+  &.dark {
+    background-color: $grey-color;
+    color: $white-color;
+
+    &:hover {
+      background-color: color.adjust($grey-color, $lightness: 10%);
+    }
+  }
+
+  &.light {
+    background-color: $white-color;
+    color: $grey-color;
+
+    &:hover {
+      background-color: color.adjust($white-color, $lightness: -10%);
+    }
+  }
+}
 
 .heightFill {
   height: -webkit-fill-available;
@@ -240,12 +271,12 @@ a {
 
   @for $i from 1 through 8 {
     & #{"#arm_#{$i}"} {
-     transform-origin: top center;
-      animation: armSlightRotation 3s ease-in-out infinite;
-      $delay: calc(math.random(30) / 10);
-      animation-delay: -#{$delay}s;
-    }
+ transform-origin: top center;
+    animation: armSlightRotation 3s ease-in-out infinite;
+    $delay: calc(math.random(30) / 10);
+    animation-delay: -#{$delay}s;
   }
+}
 }
 
 .skillsTitleContainer {
@@ -280,7 +311,7 @@ a {
   display: grid;
   grid-template-rows: min-content;
   background-color: $red-color;
-  
+
 }
 
 .skillBranches {
@@ -409,6 +440,27 @@ a {
   margin: 15vh $x-large-distance $large-distance $x-large-distance;
 }
 
+.arrowLeft,
+.arrowRight {
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+
+  &.hidden {
+    pointer-events: none;
+  }
+
+  & svg {
+    width: 5em;
+    height: 5em;
+    stroke: $light-grey-color;
+    transition: stroke 0.3s ease;
+
+    &:hover {
+      stroke: $grey-color;
+    }
+  }
+}
+
 .portfolioItem {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
@@ -425,56 +477,34 @@ a {
       user-select: none;
     }
 
-    & h2, p, a {
+    & h2,
+    p,
+    a {
       padding: $large-distance;
-    }
-
-    & button {
-      background-color: $grey-color;
-      color: $white-color;
-      padding: $small-distance $medium-distance;
-      border: none;
-      cursor: pointer;
     }
   }
 
-  .imageContainer {
+  .imageContainerParent {
     display: flex;
     justify-content: center;
     align-items: center;
     grid-column: span 7 / span 7;
     background-color: $white-color;
-    padding: $x-large-distance;    
+    padding: $x-large-distance;
   }
 
-  & .arrowLeft, .arrowRight {
-    transition: opacity 0.3s ease;
-    cursor: pointer;
-
-    &.hidden {
-      pointer-events: none;
-    }
+  & .imageContainer {
+    max-width: 800px;
   }
 
   & img {
-      opacity: 0;
-      display: none;
-      user-select: none;
+    opacity: 0;
+    display: none;
+    user-select: none;
 
-      &.active {
-        display: block;
-        animation: fadeIn 0.3s ease forwards;
-      }
-    }
-
-  & svg {
-    width: 5em;
-    height: 5em;
-    stroke: $light-grey-color;
-    transition: stroke 0.3s ease;
-
-    &:hover {
-      stroke: $grey-color;
+    &.active {
+      display: block;
+      animation: fadeIn 0.3s ease forwards;
     }
   }
 
@@ -501,39 +531,27 @@ a {
       line-height: 0.86;
     }
 
-    & h1:last-child{
+    & h1:last-child {
       background-color: $white-color;
       padding: $small-distance 0;
     }
   }
 }
 
-.gallery-container {
-  // stacked layout for gallery masonary
-  // iregular sizes fill gaps, so no gaps needed
+.galleryContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));
-  grid-auto-flow: dense;
-  gap: 0;
-  // display: flex;
-  // flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fill, 250px);
+  //grid-auto-flow: dense;
 
-  & > div {
+  grid-auto-flow: column;
+  // wrap grid columns
+  gap: 0;
+
+  &>div {
     display: flex;
-    // max-width: 25vw;
-    // use css for loop for random sizes for the width
-    @for $i from 1 through 14 {
-      &:nth-child(1n + #{$i}) {
-        //grid-column: span $i;
-        // flex: 0 0 calc(20% * $i);
-        // width: calc(20% * $i);
-      }
-    }
 
     & img {
-      //max-width: unset;
-      //height: fit-content;
-      object-fit: cover;   
+      object-fit: cover;
     }
   }
 }

@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
 }
 
-.height-fill, html {
+.heightFill, html {
   height: -webkit-fill-available;
   height: -moz-available;
   height: fill-available;
@@ -47,7 +47,7 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
-.middle-container {
+.middleContainer {
   width: -webkit-fill-available;
   width: -moz-available;
   width: fill-available;
@@ -94,19 +94,19 @@ a:hover {
   color: black;
 }
 
-.social-container {
+.socialContainer {
   right: 0;
   display: flex;
   flex-direction: column;
 }
-.social-container svg {
+.socialContainer svg {
   width: 24px;
   height: 24px;
   margin: 0.5rem 1.5rem;
   transition: fill 0.3s ease;
   fill: rgb(118, 118, 118);
 }
-.social-container svg:hover {
+.socialContainer svg:hover {
   fill: rgb(97, 97, 97);
 }
 
@@ -153,16 +153,16 @@ a:hover {
   transition: opacity 0.5s ease-in-out;
 }
 
-.intro-show-description::after {
+.introShowDescription::after {
   transform: translate(-20vw);
 }
-.intro-show-description h1 {
+.introShowDescription h1 {
   transform: translate(26.5vw, -3.5vw) rotateZ(-90deg) scale(0.6);
 }
-.intro-show-description span:first-child {
+.introShowDescription span:first-child {
   color: rgb(246, 246, 246);
 }
-.intro-show-description span:last-child {
+.introShowDescription span:last-child {
   color: rgba(0, 0, 0, 0);
 }
 

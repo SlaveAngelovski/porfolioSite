@@ -1,4 +1,9 @@
 import './styles.scss';
+import { 
+  updateArrowVisibility, 
+  setupKeyboardNavigation, 
+  prefetchImages 
+} from './gallery-utils';
 
 document.addEventListener('DOMContentLoaded', () => {
   const parentEl = document.querySelector('.galleryContainer');
@@ -12,10 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const leftArrow = dialog.querySelector<HTMLElement>('.arrowLeft');
   const rightArrow = dialog.querySelector<HTMLElement>('.arrowRight');
   
-  // Initial prefetch of the first few images
-  prefetchAllImages(thumbnails);
+  // Initial prefetch of all images using shared utility
+  prefetchImages(thumbnails);
   
   let currentIndex = 0;
+
+  // Setup keyboard navigation with dialog mode enabled
+  setupKeyboardNavigation(leftArrow, rightArrow, true, dialog);
 
   parentEl.addEventListener('click', (e) => {
     const target = e.target as HTMLElement;
@@ -26,34 +34,28 @@ document.addEventListener('DOMContentLoaded', () => {
       const thumbnail = target as HTMLImageElement;
       const thumbnailSrcToFullSrc = thumbnail.src.replace(/\/thumbs\//, '/original/');
 
+      // Find the index of the clicked thumbnail
+      currentIndex = Array.from(thumbnails).indexOf(thumbnail);
 
       fullsizeImage.src = thumbnailSrcToFullSrc;
       dialog.showModal();
+
+      // Update arrow visibility when opening dialog
+      updateArrowVisibility(currentIndex, thumbnails.length, leftArrow, rightArrow);
 
       fullsizeImage.onload = () => {
         fullsizeImage.classList.remove('loading');
       }
     }
   });
-
-  document.addEventListener('keydown', (e) => {
-    if (dialog.open) {
-      if (e.key === 'ArrowLeft') {
-        leftArrow?.click();
-      } else if (e.key === 'ArrowRight') {
-        rightArrow?.click();
-      }
-    }
-  });
   
-  closeButton.addEventListener('click', () => {
+  closeButton?.addEventListener('click', () => {
     fullsizeImage.src = '';
-
     dialog.close();
   });
   
   // Navigate using arrows
-  leftArrow.addEventListener('click', () => {
+  leftArrow?.addEventListener('click', () => {
     if (currentIndex > 0) {
       currentIndex--;
 
@@ -66,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   
-  rightArrow.addEventListener('click', () => {
+  rightArrow?.addEventListener('click', () => {
     if (currentIndex < thumbnails.length - 1) {
       currentIndex++;
 
@@ -79,39 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   
-  // Close on ESC key (built into dialog)
+  // Close when clicking outside the content area
   dialog.addEventListener('click', (e) => {
-    // Close when clicking outside the content area
     if (e.target === dialog) {
       dialog.close();
     }
   });
 });
-
-/**
- * Prefetch initial images to improve first-time viewing experience
- */
-function prefetchAllImages(thumbnails: NodeListOf<HTMLImageElement>): void {
-  thumbnails.forEach((thumbnail) => {
-    const thumbSrc = thumbnail.src;
-    const fullSrc = thumbSrc.replace(/\/thumbs\//, '/original/');
-    addPrefetchLink(fullSrc);
-  });
-}
-
-/**
- * Add a prefetch link to the document head if it doesn't already exist
- */
-function addPrefetchLink(url: string): void {
-  // Check if prefetch link already exists
-  if (!document.querySelector(`link[href="${url}"][rel="prefetch"]`)) {
-    const link = document.createElement('link');
-    link.rel = 'prefetch';
-    link.href = url;
-    link.as = 'image';
-    document.head.appendChild(link);
-  }
-}
 
 function openImageModal(
   thumbnail: HTMLImageElement, 
@@ -166,14 +142,4 @@ function openImageModal(
   
   img.src = fullSrc;
   dialog.showModal();
-}
-
-function updateArrowVisibility(
-  index: number, 
-  total: number,
-  leftArrow: HTMLElement | null | undefined,
-  rightArrow: HTMLElement | null | undefined
-): void {
-  leftArrow.classList.toggle('hidden', index === 0);
-  rightArrow.classList.toggle('hidden', index === total - 1);
 }

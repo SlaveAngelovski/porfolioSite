@@ -1,3 +1,5 @@
+import { updateArrowVisibility, setupKeyboardNavigation } from './gallery-utils';
+
 type PortfolioElements = {
   images: NodeListOf<HTMLImageElement>;
   description: NodeListOf<HTMLElement>;
@@ -7,7 +9,6 @@ type PortfolioElements = {
 
 export function initializePortfolio(): void {
   document.addEventListener('DOMContentLoaded', () => {
-
     const parent = document.querySelector('[data-portfolio]');
 
     if (parent === null) return;
@@ -25,21 +26,23 @@ export function initializePortfolio(): void {
 
     const totalItems = elements.images.length;
 
-    elements.arrowLeft.addEventListener('click', () => {
+    setupKeyboardNavigation(elements.arrowLeft, elements.arrowRight);
+
+    elements.arrowLeft?.addEventListener('click', () => {
       currentIndex == 0 ? currentIndex = 0 : currentIndex--;
       
       updateDisplay(currentIndex, elements);
-      updateArrowVisibility(currentIndex, totalItems, elements);
+      updateArrowVisibility(currentIndex, totalItems, elements.arrowLeft, elements.arrowRight);
     });
 
-    elements.arrowRight.addEventListener('click', () => {
+    elements.arrowRight?.addEventListener('click', () => {
       currentIndex >= totalItems - 1 ? currentIndex = totalItems - 1 : currentIndex++;
 
       updateDisplay(currentIndex, elements);
-      updateArrowVisibility(currentIndex, totalItems, elements);
+      updateArrowVisibility(currentIndex, totalItems, elements.arrowLeft, elements.arrowRight);
     });
 
-    updateArrowVisibility(currentIndex, totalItems, elements);
+    updateArrowVisibility(currentIndex, totalItems, elements.arrowLeft, elements.arrowRight);
   });
 }
 
@@ -49,11 +52,6 @@ function hasNullProperty(element: PortfolioElements): boolean {
     if (value instanceof NodeList && value.length === 0) return true;
     return false;
   });
-}
-
-function updateArrowVisibility(index: number, total: number, elements: PortfolioElements): void {
-  elements.arrowLeft.classList.toggle('hidden', index === 0);
-  elements.arrowRight.classList.toggle('hidden', index === total - 1);
 }
 
 function updateDisplay(index: number, elements: PortfolioElements): void {

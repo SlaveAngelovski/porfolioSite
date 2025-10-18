@@ -124,7 +124,7 @@ button {
   position: sticky;
   top: 0;
   background-color: $white-color-transparent;
-  z-index: 1;
+  z-index: 2;
 
   & nav {
     display: flex;
@@ -163,6 +163,7 @@ a {
   color: $light-grey-color;
   cursor: pointer;
   transition: color 0.3s ease;
+  text-decoration: none;
 
   &:hover {
     color: black;

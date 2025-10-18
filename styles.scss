@@ -538,6 +538,54 @@ a {
   }
 }
 
+dialog:modal {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+dialog[open] {
+  display: flex;
+}
+
+dialog {
+  @extend .widthFill;
+  @extend .heightFill;
+  place-content: center;
+  background-color: transparent;
+  border: none;
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+  }
+
+  .closeButton {
+    top: 0;
+    right: 0;
+    position: absolute;
+  }
+
+  .popupContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & * {
+      user-select: none;
+    }
+  }
+}
+
+.loading {
+  &:after {
+    content: 'Loading...';
+    font-size: 1.5em;
+    color: $light-grey-color;
+    animation: fadeIn 1s ease-in-out infinite;
+    user-select: none;
+
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

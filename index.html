@@ -8,10 +8,8 @@
 		content="Slave Angelovski portfolio website. 3d artist, front end and backend developer located in Copenhagen.">
 	<meta name="keywords" content="Slave Angelovski,3d artist,web designer,front end developer">
 	<meta name="author" content="Slave Angelovski">
+	<link rel="icon" type="image/png" href="izmages/favicon.ico" />
 	<title>Portfolio</title>
-	<!-- <link rel="stylesheet" type="text/css" href="glightbox.min.css"> -->
-	<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans"> -->
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 </head>
 
 <body>
@@ -21,7 +19,7 @@
 				<a class="active" href="#intro">Home</a>
 				<a href="#skills">Skills</a>
 				<a href="#portfolio">Portfolio</a>
-				<a>Contact</a>
+				<a href="#contact">Contact</a>
 				<a href="https://github.com/SlaveAngelovski" aria-hidden="true" target="_blank">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 						<path
@@ -40,19 +38,27 @@
 		<div class="mainContainer">
 			<div class="middleContainer">
 				<div class="intro" id="intro" data-id="introEl">
-					<h1 class="titleTxt">
+					<h1>
 						<span>HELLO</span>
 						<span>.</span>
 					</h1>
 					<div class="description hidden">
 						<p>
 							Hello. My name is Slave Angelovski.<br />
+							I am a frontend Developer and a former 3d artist.<br />
+							My interest in web design and front end began since November 2017.<br /><br />
+							Outside of work, I experiment with AI image generators, <br /> 
+							and read about science and technology with an occasional warhammer 40k lore. <br />
+							In summer, my favorite moments are wandering Copenhagen’s streets with my wife and son,<br />
+							 discovering hidden cafes and parks.
 						</p>
 					</div>
 				</div>
+				<div class="skills" data-id="skillsEl">
 					<div class="skillsTitleContainer">
 						<h2 class="skillsTitle">SKILLS</h2>
 					</div>
+					<div class="skillsContainer" id="skills">
 						<div class="buddhaContainer">
 							<svg viewBox="0 0 820 690" fill="none" class="buddha" xmlns="http://www.w3.org/2000/svg">
 								<g id="bodyShadow" filter="url(#filter0_f_14_2)">
@@ -232,9 +238,9 @@
 										<feFlood flood-opacity="0" result="BackgroundImageFix" />
 										<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
 											result="shape" />
-										<feGaussianBlur stdDeviation="7.35" result="effect1_foregroundBlur_2_57" />
+										<feGaussianBlur stdDeviation="7.35" result="effect1_foregroundBlur_14_2" />
 									</filter>
-									<filter id="filter1_d_2_57" x="334.5" y="102.395" width="100.5" height="131.855"
+									<filter id="filter1_d_14_2" x="352.5" y="151.395" width="100.5" height="131.855"
 										filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 										<feFlood flood-opacity="0" result="BackgroundImageFix" />
 										<feColorMatrix in="SourceAlpha" type="matrix"
@@ -245,11 +251,11 @@
 										<feColorMatrix type="matrix"
 											values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
 										<feBlend mode="normal" in2="BackgroundImageFix"
-											result="effect1_dropShadow_2_57" />
-										<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_57"
+											result="effect1_dropShadow_14_2" />
+										<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_14_2"
 											result="shape" />
 									</filter>
-									<filter id="filter2_n_2_57" x="343" y="158" width="78.1608" height="41.3115"
+									<filter id="filter2_n_14_2" x="361" y="207" width="78.1609" height="41.3114"
 										filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 										<feFlood flood-opacity="0" result="BackgroundImageFix" />
 										<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
@@ -259,20 +265,32 @@
 										<feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
 										<feComponentTransfer in="alphaNoise" result="coloredNoise1">
 											<feFuncA type="discrete"
-												tableValues="0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 " />
+												tableValues="0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 " />
 										</feComponentTransfer>
 										<feComposite operator="in" in2="shape" in="coloredNoise1"
 											result="noise1Clipped" />
 										<feFlood flood-color="#000000" result="color1Flood" />
 										<feComposite operator="in" in2="noise1Clipped" in="color1Flood"
 											result="color1" />
-										<feMerge result="effect1_noise_2_57">
+										<feMerge result="effect1_noise_14_2">
 											<feMergeNode in="shape" />
 											<feMergeNode in="color1" />
 										</feMerge>
 									</filter>
+									<linearGradient id="paint0_linear_14_2" x1="544.619" y1="3.70164" x2="571.511"
+										y2="40.2233" gradientUnits="userSpaceOnUse">
+										<stop stop-color="#41D1FF" />
+										<stop offset="1" stop-color="#BD34FE" />
+									</linearGradient>
+									<linearGradient id="paint1_linear_14_2" x1="566.773" y1="0.86192" x2="571.638"
+										y2="34.2329" gradientUnits="userSpaceOnUse">
+										<stop stop-color="#FFEA83" />
+										<stop offset="0.0833" stop-color="#FFDD35" />
+										<stop offset="1" stop-color="#FFA800" />
+									</linearGradient>
 								</defs>
 							</svg>
+
 						</div>
 						<div class="skillTreeContainer">
 							<div class="skillBranches">
@@ -403,10 +421,12 @@
 					</div>
 					<div class="skillFooter">
 						<p>
-							I’ve been building interactive experiences for over 15 years. I started in 2009 as a 3D artist on international projects
+							I’ve been building interactive experiences for over 15 years. I started in 2009 as a 3D
+							artist on international projects
 							and now work as a senior software engineer creating data-driven front ends.
-	
-							I am a self-motivated individual, who believes that strong collaboration, thoughtful mentorship and positive team
+
+							I am a self-motivated individual, who believes that strong collaboration, thoughtful
+							mentorship and positive team
 							dynamics are as vital as writing clear, maintainable and efficient code.
 						</p>
 					</div>
@@ -416,7 +436,8 @@
 						<div class="imageContainerParent">
 							<div class="arrowLeft" data-arrow-left>
 								<svg viewBox="0 0 24 24" fill="none" stroke="black" xmlns="http://www.w3.org/2000/svg">
-									<path d="M15 18L9 12L15 6" stroke="inherit" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M15 18L9 12L15 6" stroke="inherit" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round" />
 								</svg>
 							</div>
 							<div class="imageContainer">
@@ -427,21 +448,28 @@
 							</div>
 							<div class="arrowRight" data-arrow-right>
 								<svg viewBox="0 0 24 24" fill="none" stroke="black" xmlns="http://www.w3.org/2000/svg">
-									<path d="M9 18L15 12L9 6" stroke="inherit" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M9 18L15 12L9 6" stroke="inherit" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round" />
 								</svg>
 							</div>
 						</div>
 						<div class="description">
 							<div data-portfolio-item class="active">
 								<h2>Portfolio website</h2>
-								<p>This is my portfolio website and its made completely from scratch, all the graphics, code and design are made by me. <br><br> The website style is continuous scroll design, I used that particular design because I think it is great for presentation. <br><br> The effects are made with java script and css animations.</p>
-								
+								<p>This is my portfolio website and its made completely from scratch, all the graphics,
+									code and design are made by me. <br><br> The website style is continuous scroll
+									design, I used that particular design because I think it is great for presentation.
+									<br><br> The effects are made with java script and css animations.
+								</p>
+
 							</div>
 
 							<div data-portfolio-item>
 								<h2>Space Elevator</h2>
-								<p>This website I made 7 years ago as a showcase for the space elevator concept. All of the graphics, code and design is made by me.<br><br>
-									The website showcases the journey the space elevator will take from ground level to the outer space. The effects are made with java script and css animations.</p>
+								<p>This website I made 7 years ago as a showcase for the space elevator concept. All of
+									the graphics, code and design is made by me.<br><br>
+									The website showcases the journey the space elevator will take from ground level to
+									the outer space. The effects are made with java script and css animations.</p>
 								<a href="" target="_blank" referrerpolicy="no-referrer">
 									<button class="dark">View Project</button>
 								</a>
@@ -449,20 +477,25 @@
 
 							<div data-portfolio-item>
 								<h2>Vehicle tracker</h2>
-								<p>A side project for extracting frames from videos and counting and tracking cars with speed estimation. <br><br>
-									The project is using python with nodejs wrappers, it uses tensorflow, ffmpeg and yolov5. <br><br>
-									The backend is made with nodejs and expressjs the tracking results are drawn onto the video with canves. <br>
+								<p>A side project for extracting frames from videos and counting and tracking cars with
+									speed estimation. <br><br>
+									The project is using python with nodejs wrappers, it uses tensorflow, ffmpeg and
+									yolov5. <br><br>
+									The backend is made with nodejs and expressjs the tracking results are drawn onto
+									the video with canves. <br>
 									The frontend is made with vanilla javascript. <br><br>
 									The project is still in development phase.
 								</p>
-								<a href="https://github.com/SlaveAngelovski/VehicleTracker/tree/develop" target="_blank" referrerpolicy="no-referrer">
+								<a href="https://github.com/SlaveAngelovski/VehicleTracker/tree/develop" target="_blank"
+									referrerpolicy="no-referrer">
 									<button class="dark">View Project</button>
 								</a>
 							</div>
 
 							<div data-portfolio-item>
 								<h2>3D Gallery</h2>
-								<p>Some 3d renders from 8 years ago I made with 3d studio max and rendered with vray and post processed in photoshop.
+								<p>Some 3d renders from when I worked as a 3d artist 8 years ago. They are made with 3d studio max, rendered with vray and
+									post processed in photoshop.
 								</p>
 								<a href="/gallery.html" target="_blank" referrerpolicy="no-referrer">
 									<button class="dark">View Project</button>
@@ -475,6 +508,133 @@
 							</div>
 						</div>
 					</div>
+				</div>
+				<div class="contact" id="contact">
+					<div class="housesContainer" data-id="contactEl">
+						<img src="images/houses/house1.png">
+						<img src="images/houses/house2.png">
+						<img src="images/houses/house3.png">
+						<img src="images/houses/house4.png">
+						<img src="images/houses/house5.png">
+					</div>
+					<div class="infoContainer">
+						<h2>Send me a message</h2>
+						<div class="contactContainer">
+							<div class="emailParent">
+								<span>
+									<svg class="email" viewBox="0 0 1088 1404" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path d="M544.5 1380L70.3511 690L1018.65 690L544.5 1380Z"
+											id="envelopeTriangleUp" filter="url(#filter0_d_6_4)" fill="#D7B168" />
+										<g id="letter">
+											<rect id="letterWhite" width="1088" height="690" rx="20" fill="#E3E5E4" />
+											<g id="letterText">
+												<line id="Line 1" x1="398.5" y1="64.5" x2="696.5" y2="64.5"
+													stroke="#17181A" stroke-width="31" stroke-linecap="round" />
+												<line id="Line 5" x1="727.5" y1="514.5" x2="1025.5" y2="514.5"
+													stroke="#17181A" stroke-width="31" stroke-linecap="round" />
+												<path id="Line 2" d="M69.5 174.5H653.5" stroke="#17181A"
+													stroke-width="31" stroke-linecap="round" />
+												<path id="Line 3" d="M69.5 240H493" stroke="#17181A" stroke-width="31"
+													stroke-linecap="round" />
+												<path id="Line 4" d="M69.5 305H838" stroke="#17181A" stroke-width="31"
+													stroke-linecap="round" />
+											</g>
+										</g>
+										<g id="envelope">
+											<rect id="envelopeBack" y="690" width="1088" height="690" rx="20"
+												fill="#E4D39B" />
+											<path id="envelopeTriangle" d="M544.5 690L1018.65 1380H70.3511L544.5 690Z"
+												fill="#D7B168" />
+										</g>
+										<defs>
+											<filter id="filter0_d_6_4" x="57.1511" y="686.8" width="974.698"
+												height="716.4" filterUnits="userSpaceOnUse"
+												color-interpolation-filters="sRGB">
+												<feFlood flood-opacity="0" result="BackgroundImageFix" />
+												<feColorMatrix in="SourceAlpha" type="matrix"
+													values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+													result="hardAlpha" />
+												<feOffset dy="10" />
+												<feGaussianBlur stdDeviation="6.6" />
+												<feComposite in2="hardAlpha" operator="out" />
+												<feColorMatrix type="matrix"
+													values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+												<feBlend mode="normal" in2="BackgroundImageFix"
+													result="effect1_dropShadow_6_4" />
+												<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_6_4"
+													result="shape" />
+											</filter>
+										</defs>
+									</svg>
+								</span>
+								<span><a mailto:slave.angelovski@gmail.com>slave.angelovski@gmail.com</a></span>
+							</div>
+							<div class="phoneParent">
+								<span>
+									<svg class="phone" viewBox="0 0 860 860" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<g id="waves">
+											<circle id="wave" cx="432" cy="432" r="330" stroke="url(#linearWaves)"
+												stroke-width="14" />
+											<circle id="wave2" cx="432" cy="432" r="383" stroke="url(#linearWaves)"
+												stroke-width="14" />
+										</g>
+										<g id="phoneGroup">
+											<rect x="268" y="118" width="324" height="624" rx="32" fill="#DDDFE0"
+												stroke="#7F7F7F" stroke-width="2" />
+											<rect x="269" y="146" width="324" height="568"
+												fill="url(#paint2_linear_9_10)" />
+											<path d="M371 134H492" stroke="black" stroke-width="4" />
+											<circle cx="510.5" cy="133.5" r="9.5" fill="#4E4E4E" />
+										</g>
+										<defs>
+											<linearGradient id="linearWaves" x1="432" y1="40" x2="432" y2="820"
+												gradientUnits="userSpaceOnUse">
+												<stop />
+												<stop offset="0" stop-opacity="0" />
+												<stop offset="0.23" stop-opacity="0" />
+												<stop offset="0.24" stop-opacity="1" />
+												<stop offset="0.80" stop-opacity="1" />
+												<stop offset="0.81" stop-opacity="0" />
+												<stop offset="1" stop-opacity="0" />
+											</linearGradient>
+											<linearGradient id="paint2_linear_9_10" x1="593" y1="697.63" x2="269"
+												y2="162.37" gradientUnits="userSpaceOnUse">
+												<stop stop-color="#282828" />
+												<stop offset="1" stop-color="#515151" />
+											</linearGradient>
+										</defs>
+									</svg>
+								</span>
+								<span><a tel:91637058>91 63 70 58</a></span>
+							</div>
+							<div class="locationParent">
+								<span>
+									<svg class="location" viewBox="0 0 694 1071" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path id="Ellipse 1"
+											d="M694 400C694 620.914 350.617 1070.5 350.617 1070.5C350.617 1070.5 0 620.914 0 400C0 179.086 155.357 0 347 0C538.643 0 694 179.086 694 400Z"
+											fill="#3F4042" />
+										<circle id="Ellipse 2" cx="347" cy="335" r="284" fill="#E4E5E7" stroke="black"
+											stroke-width="6" />
+										<g id="ExcludeHouse">
+											<path
+												d="M344.453 145.577L501.453 311.577L502 312.155V526.951H382V384.951H311V526.951H192V312.186L192.512 311.615L341.512 145.615L342.962 144L344.453 145.577ZM245 381.951V451.951H283V381.951H245ZM407 451.951H445V381.951H407V451.951Z"
+												fill="#3F4042" />
+											<path
+												d="M344.453 145.577L341.91 147.982L341.91 147.982L344.453 145.577ZM501.453 311.577L498.91 313.982L498.91 313.982L501.453 311.577ZM502 312.155H505.5V310.762L504.543 309.75L502 312.155ZM502 526.951V530.451H505.5V526.951H502ZM382 526.951H378.5V530.451H382V526.951ZM382 384.951H385.5V381.451H382V384.951ZM311 384.951V381.451H307.5V384.951H311ZM311 526.951V530.451H314.5V526.951H311ZM192 526.951H188.5V530.451H192V526.951ZM192 312.186L189.395 309.848L188.5 310.846V312.186H192ZM192.512 311.615L189.907 309.277L189.907 309.278L192.512 311.615ZM341.512 145.615L338.907 143.277L338.907 143.277L341.512 145.615ZM342.962 144L345.505 141.595L342.895 138.835L340.358 141.662L342.962 144ZM245 381.951V378.451H241.5V381.951H245ZM245 451.951H241.5V455.451H245V451.951ZM283 451.951V455.451H286.5V451.951H283ZM283 381.951H286.5V378.451H283V381.951ZM407 451.951H403.5V455.451H407V451.951ZM445 451.951V455.451H448.5V451.951H445ZM445 381.951H448.5V378.451H445V381.951ZM407 381.951V378.451H403.5V381.951H407ZM344.453 145.577L341.91 147.982L498.91 313.982L501.453 311.577L503.996 309.172L346.996 143.172L344.453 145.577ZM501.453 311.577L498.91 313.982L499.457 314.56L502 312.155L504.543 309.75L503.996 309.172L501.453 311.577ZM502 312.155H498.5V526.951H502H505.5V312.155H502ZM502 526.951V523.451H382V526.951V530.451H502V526.951ZM382 526.951H385.5V384.951H382H378.5V526.951H382ZM382 384.951V381.451H311V384.951V388.451H382V384.951ZM311 384.951H307.5V526.951H311H314.5V384.951H311ZM311 526.951V523.451H192V526.951V530.451H311V526.951ZM192 526.951H195.5V312.186H192H188.5V526.951H192ZM192 312.186L194.605 314.523L195.117 313.953L192.512 311.615L189.907 309.278L189.395 309.848L192 312.186ZM192.512 311.615L195.116 313.953L344.116 147.953L341.512 145.615L338.907 143.277L189.907 309.277L192.512 311.615ZM341.512 145.615L344.116 147.953L345.566 146.338L342.962 144L340.358 141.662L338.907 143.277L341.512 145.615ZM342.962 144L340.419 146.405L341.91 147.982L344.453 145.577L346.996 143.173L345.505 141.595L342.962 144ZM245 381.951H241.5V451.951H245H248.5V381.951H245ZM245 451.951V455.451H283V451.951V448.451H245V451.951ZM283 451.951H286.5V381.951H283H279.5V451.951H283ZM283 381.951V378.451H245V381.951V385.451H283V381.951ZM407 451.951V455.451H445V451.951V448.451H407V451.951ZM445 451.951H448.5V381.951H445H441.5V451.951H445ZM445 381.951V378.451H407V381.951V385.451H445V381.951ZM407 381.951H403.5V451.951H407H410.5V381.951H407Z"
+												fill="black" />
+										</g>
+									</svg>
+								</span>
+								<span>Copenhagen</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="contactFooter">
+					<span class="thankYou">thank you for visiting my website</span>
 				</div>
 			</div>
 		</div>

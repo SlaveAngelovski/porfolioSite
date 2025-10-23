@@ -1,17 +1,13 @@
 window.addEventListener("load", () => {
   const introToggle = document.querySelector("[data-id='introToggle']");
   const introEl = document.querySelector("[data-id='introEl']");
-  const skillsEl = document.querySelector("[data-id='skillsEl']");
-  const portfolioEl = document.querySelector(".portfolio");
-  const contactEl = document.querySelector(".contact");
+  const contactEl = document.querySelector("[data-id='contactEl']");
   const description = document.querySelector('.description');
 
   const handlers = [
   {
     el: introToggle,
     handler: (entry: IntersectionObserverEntry) => {
-      console.log(entry.target, entry);
-
       if (!entry.isIntersecting) {
         toggleClass(introEl, 'introShowDescription', 'add');
         toggleClass(description, 'hidden', 'remove');
@@ -20,13 +16,20 @@ window.addEventListener("load", () => {
         toggleClass(description, 'hidden', 'add');
       }
     },
+  },
+  {
+    el: contactEl,
+    handler: (entry: IntersectionObserverEntry) => {
+      const condition = entry.isIntersecting ? 'add' : 'remove';
+      toggleClass(contactEl, 'showHouses', condition);
+    }
   }
 ];
 
   const observerOptions = {
     root: null, // Use the viewport as the root
     rootMargin: "0px",
-    threshold: 0 // Trigger when 10% of the element is visible
+    threshold: 0.5
   };
 
   const elementHandlers = new Map();

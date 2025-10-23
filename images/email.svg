@@ -1,0 +1,18 @@
+<svg viewBox="0 0 1088 1380" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame 1">
+<g id="envelope">
+<rect id="envelope_2" y="690" width="1088" height="690" rx="20" fill="#E4D39B"/>
+<path id="envelopeTriangle" d="M544.5 690L1018.65 1380H70.3511L544.5 690Z" fill="#D7B168"/>
+</g>
+<g id="letter">
+<rect id="letter_2" width="1088" height="690" rx="20" fill="#E3E5E4"/>
+<g id="letterText">
+<line id="Line 1" x1="398.5" y1="64.5" x2="696.5" y2="64.5" stroke="#17181A" stroke-width="31" stroke-linecap="round"/>
+<line id="Line 5" x1="727.5" y1="514.5" x2="1025.5" y2="514.5" stroke="#17181A" stroke-width="31" stroke-linecap="round"/>
+<path id="Line 2" d="M69.5 174.5H653.5" stroke="#17181A" stroke-width="31" stroke-linecap="round"/>
+<path id="Line 3" d="M69.5 240H493" stroke="#17181A" stroke-width="31" stroke-linecap="round"/>
+<path id="Line 4" d="M69.5 305H838" stroke="#17181A" stroke-width="31" stroke-linecap="round"/>
+</g>
+</g>
+</g>
+</svg>

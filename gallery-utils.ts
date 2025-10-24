@@ -1,11 +1,3 @@
-/**
- * Shared gallery utility functions
- * Used by both portfolio slider and gallery components
- */
-
-/**
- * Updates visibility of navigation arrows based on current position
- */
 export function updateArrowVisibility(
   index: number,
   total: number,

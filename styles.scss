@@ -17,7 +17,7 @@ html {
 
 @font-face {
   font-family: 'Monserat';
-  src: url('fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+  src: url('/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -182,16 +182,11 @@ aside {
   z-index: 2;
 
   & svg {
-      width: 16px;
-      height: 16px;
+      width: 26px;
+      height: 100%;
       vertical-align: middle;
       fill: $light-grey-color;
       transition: fill 0.3s ease;
-
-      @media screen and (min-width: $tablet-size) {
-        width: 24px;
-        height: 24px;
-      }
 
       &:hover {
         fill: $grey-color;

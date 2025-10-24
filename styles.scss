@@ -136,7 +136,6 @@ button {
   position: sticky;
   top: 0;
   background-color: rgba($white-color, 0.7);
-  backdrop-filter: blur(10px);
   z-index: 2;
 
   & nav {
@@ -430,8 +429,8 @@ a {
   font-weight: 500;
   padding: $small-distance $medium-distance;
   color: $white-color;
-  background-color: rgba($white-color, 0.1);
-  border-bottom: 2px solid rgba($white-color, 0);
+
+  border-bottom: 2px solid transparent;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -845,8 +844,8 @@ svg.location {
 
 .galleryContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25vw, 1fr));
-  gap: 0;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 
   & > div {
     display: flex;
@@ -854,6 +853,10 @@ svg.location {
     & img {
       object-fit: cover;
     }
+  }
+
+  dialog {
+    overflow: hidden;
   }
 }
 
@@ -863,6 +866,8 @@ dialog:modal {
 
 dialog[open] {
   display: flex;
+  @extend .widthFill;
+  @extend .heightFill;
 }
 
 dialog {
@@ -877,6 +882,10 @@ dialog {
     backdrop-filter: blur(8px);
   }
 
+  &:focus {
+    outline: none;
+  }
+
   .closeButton {
     top: 0;
     right: 0;
@@ -888,13 +897,14 @@ dialog {
   }
 
   .active {
-    animation: fadeIn 0.1s ease forwards;
+    animation: fadeIn 0.2s ease forwards;
   }
 
   .popupContent {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 
     & * {
       user-select: none;

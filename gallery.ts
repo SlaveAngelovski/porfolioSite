@@ -4,6 +4,7 @@ import {
   setupKeyboardNavigation, 
   prefetchImages 
 } from './gallery-utils';
+import { toggleClass } from './scripts/scripts';
 
 document.addEventListener('DOMContentLoaded', () => {
   const parentEl = document.querySelector('.galleryContainer');
@@ -13,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (!parentEl || !dialog || !fullsizeImage || thumbnails?.length < 1) return;
 
-  const closeButton = dialog.querySelector<HTMLButtonElement>('.closeButton');
+  const closeButton = dialog.querySelector<HTMLButtonElement>('button .closeButton');
   const leftArrow = dialog.querySelector<HTMLElement>('.arrowLeft');
   const rightArrow = dialog.querySelector<HTMLElement>('.arrowRight');
   
@@ -29,8 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const target = e.target as HTMLElement;
 
     if (target.tagName === 'IMG' && target.classList.contains('galleryThumbnail')) {
-      fullsizeImage.classList.add('loading');
-
       const thumbnail = target as HTMLImageElement;
       const thumbnailSrcToFullSrc = thumbnail.src.replace(/\/thumbs\//, '/original/');
 
@@ -38,14 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
       currentIndex = Array.from(thumbnails).indexOf(thumbnail);
 
       fullsizeImage.src = thumbnailSrcToFullSrc;
-      dialog.showModal();
+      // dialog.showModal();
+      openImageModal(thumbnail, fullsizeImage, dialog);
 
       // Update arrow visibility when opening dialog
       updateArrowVisibility(currentIndex, thumbnails.length, leftArrow, rightArrow);
-
-      fullsizeImage.onload = () => {
-        fullsizeImage.classList.remove('loading');
-      }
     }
   });
   
@@ -54,14 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
     dialog.close();
   });
   
-  // Navigate using arrows
   leftArrow?.addEventListener('click', () => {
     if (currentIndex > 0) {
       currentIndex--;
 
       const prevThumb = thumbnails[currentIndex];
-
-      fullsizeImage.classList.add('loading');
 
       openImageModal(prevThumb, fullsizeImage, dialog);
       updateArrowVisibility(currentIndex, thumbnails.length, leftArrow, rightArrow);
@@ -74,16 +67,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const nextThumb = thumbnails[currentIndex];
 
-      fullsizeImage.classList.add('loading');
-
       openImageModal(nextThumb, fullsizeImage, dialog);
       updateArrowVisibility(currentIndex, thumbnails.length, leftArrow, rightArrow);
     }
   });
   
   // Close when clicking outside the content area
-  dialog.addEventListener('click', (e) => {
-    if (e.target === dialog) {
+  dialog.addEventListener('click', (e: Event) => {
+    const target = e.target as HTMLElement;
+    if (target?.offsetParent === dialog || target === dialog) {
       dialog.close();
     }
   });
@@ -99,14 +91,12 @@ function openImageModal(
   
   // Show loading indicator
   dialog.classList.add('loading');
-  fullsizeImage.style.opacity = '0';
+  toggleClass(fullsizeImage, 'active', 'remove');
+  toggleClass(fullsizeImage, 'hidden', 'add');
   
   // Remove any existing error messages
   const errorMsg = dialog.querySelector('.error-message');
   if (errorMsg) errorMsg.remove();
-  
-  // Reset image display in case it was hidden from a previous error
-  fullsizeImage.style.display = '';
   
   // Load the image
   const img = new Image();
@@ -117,7 +107,8 @@ function openImageModal(
     
     // Fade in the image once loaded
     setTimeout(() => {
-      fullsizeImage.style.opacity = '1';
+      toggleClass(fullsizeImage, 'hidden', 'remove');
+      toggleClass(fullsizeImage, 'active', 'add');
     }, 50);
   };
   
@@ -126,7 +117,6 @@ function openImageModal(
     dialog.classList.add('error');
     
     // Show error message if image fails to load
-    fullsizeImage.style.display = 'none'; // Hide the image
     
     // Create error message element
     const errorMsg = document.createElement('div');

@@ -249,7 +249,7 @@ a {
     left: 8vw;
 
     @media screen and (max-width: $tablet-size) {
-      top: 40%;
+      top: 35%;
       right: auto;
       bottom: auto;
       left: auto;
@@ -291,7 +291,7 @@ a {
   }
 
   h1 {
-    transform: translateY(calc(13vw + 27vh)) scale(0.8);
+    transform: translateY(calc(41vh + 6vw)) scale(0.8);
 
     @media screen and (min-width: $phone-size) {
       transform: translate(26.5vw, -3.5vw) rotateZ(-90deg) scale(0.6);
@@ -700,21 +700,6 @@ a {
   align-items: center;
 }
 
-.galleryContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 250px);
-  grid-auto-flow: column;
-  gap: 0;
-
-  &>div {
-    display: flex;
-
-    & img {
-      object-fit: cover;
-    }
-  }
-}
-
 .housesContainer {
   display: grid;
   grid-auto-flow: column;
@@ -840,6 +825,20 @@ svg.location {
   padding: 5vh $x-large-distance $x-large-distance $x-large-distance;
 }
 
+.galleryContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25vw, 1fr));
+  gap: 0;
+
+  & > div {
+    display: flex;
+
+    & img {
+      object-fit: cover;
+    }
+  }
+}
+
 dialog:modal {
   animation: fadeIn 0.3s quadratic(0.5, 0, 0.5, 1);
 }
@@ -864,6 +863,14 @@ dialog {
     top: 0;
     right: 0;
     position: absolute;
+  }
+
+  & img {
+    transition: opacity 0.3s ease;
+  }
+
+  .active {
+    animation: fadeIn 0.1s ease forwards;
   }
 
   .popupContent {

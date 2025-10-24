@@ -13,6 +13,10 @@ export default {
     sourcemap: true,
     rollupOptions: {
       // external: ['chart.js'],
+      input: {
+        main: './index.html',
+        gallery: './gallery.html',
+      },
     },
   }
 }  satisfies UserConfig;

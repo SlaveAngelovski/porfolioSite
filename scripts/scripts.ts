@@ -50,7 +50,7 @@ window.addEventListener("load", () => {
   
 });
 
-function toggleClass(el: Element | null, classesToToggle: string, method: 'add' | 'remove'): void {
+export function toggleClass(el: Element | null, classesToToggle: string, method: 'add' | 'remove'): void {
   if (el === null) return;
   
   classesToToggle.split(' ').forEach((cls) => {
